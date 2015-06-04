@@ -28,12 +28,40 @@ function getExhibitions()
 		{
 			//if($ex->is_live)
 			//{
-				array_push($ret, $ex);
+				$ret[$ex->position] = $ex;
 			//}
 		}
+		ksort ($ret);
 			//var_dump($ret);
 		return $ret;
 	}
+}
+
+function getTours($e)
+{
+	$exhibs = getExhibitions();
+	$exhib = $exhibs[$e];
+	
+	$json = getJSON();
+	$data = json_decode($json);
+	$tours = $data->tours;
+	
+	//var_dump($exhib);
+	
+	$eUUID = $exhib->uuid;
+	
+	$ret = array();
+	foreach($tours as $t)
+	{
+		if($t->exhibition_uuid == $eUUID)
+		{
+			array_push($ret, $t);
+		}
+	}
+	
+	return $ret;
+	
+
 }
 
 ?>

@@ -40,6 +40,31 @@ p, h1, h2, h3
 {
 	margin:0;
 }
+/* Lists */
+
+.listHolder
+{
+	margin-top:12vh;
+	
+}
+
+.list h3
+{
+	font-size: 3vmax;
+	color: rgb(242,98,97);
+	margin: 1vh 0;
+}
+.list p
+{
+	font-size: 2vmax;
+	margin: 1vh 0;
+	color: rgb(117,122,126);
+}
+.list  a
+{
+	border-bottom: 1px solid rgb(117,122,126);
+
+}
 
 /* Home Page */
 body#home
@@ -104,29 +129,7 @@ background-size:cover;        /* Sets background image to cover entire element *
 }
 
 /* Exhibitions */
-#exhibList
-{
-	margin-top:12vh;
-	
-}
 
-#exhibList h3
-{
-	font-size: 3vmax;
-	color: rgb(242,98,97);
-	margin: 1vh 0;
-}
-#exhibList p
-{
-	font-size: 2vmax;
-	margin: 1vh 0;
-	color: rgb(117,122,126);
-}
-#exhibList  a
-{
-	border-bottom: 1px solid rgb(117,122,126);
-
-}
 
 /* Exhibit */
 
