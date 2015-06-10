@@ -186,3 +186,29 @@ margin: 0 !important;
 {
 	margin-left: 5vmax;
 }
+
+/* art list */
+
+
+#picHolder img
+{
+	width:100%;
+	height: auto;
+	margin: 2vh 0;
+
+}
+#picHolder #left-col
+{
+	position: absolute;
+	top: 12vh;
+	width: 42.5%;
+	left: 5%;
+}
+#picHolder #right-col
+{
+	position: absolute;
+	top: 12vh;
+	width: 42.5%;
+	right: 5%;
+	
+}
