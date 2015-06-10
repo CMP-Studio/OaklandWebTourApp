@@ -1,5 +1,5 @@
 <?php
-	require_once $_SERVER['DOCUMENT_ROOT'] . "/app/code/JSON.php";
+	require_once $_SERVER['DOCUMENT_ROOT'] . "/app/code/data.php";
 	
 	
 	$exhib = getExhibitions();
@@ -21,7 +21,7 @@
 		<div id="exhibListHolder" class="listHolder">
 			<ul id="exhibList" class="nav nav-stacked list">
 				<?php foreach($exhib as $k=>$e){ ?>
-					<li role="presentation"><a href="/exhibit?e=<?php print $k; ?>"><h3><?php print $e->title; ?></h3><p><?php print $e->subtitle ?></p></a></li>
+					<li role="presentation"><a href="/exhibit?e=<?php print $e["uuid"]; ?>"><h3><?php print $e["title"]; ?></h3><p><?php print $e["subtitle"]; ?></p></a></li>
 				<?php } ?>
 			</ul>
 		</div>

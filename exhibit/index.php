@@ -1,10 +1,10 @@
 <?php
 	$e = $_GET["e"];
 	
-	require_once $_SERVER['DOCUMENT_ROOT'] . "/app/code/JSON.php";
-	$exhib = getExhibitions();
+	require_once $_SERVER['DOCUMENT_ROOT'] . "/app/code/data.php";
+
 	
-	$exhibit = $exhib[$e];
+	$exhibit = getExhibit($e);
 ?>
 
 <html>
@@ -18,13 +18,13 @@
 		{
 			background-position:50% 50%;  /* Sets reference point to scale from */
 			background-size:cover;        /* Sets background image to cover entire element */
-			background-image: url('<?php print $exhibit->bg_ipad_retina;  ?>');
+			background-image: url('<?php print $exhibit["imgurl"]  ?>');
 		}
 	</style>
 	</head>
 	<body>
 		<?php
-			dispTopbar($exhibit->title, false, "/exhibitions");
+			dispTopbar($exhibit["title"], false, "/exhibitions");
 		?>
 		<div id="exhibListHolder">
 			<ul id="exhibAction" class="nav nav-stacked">

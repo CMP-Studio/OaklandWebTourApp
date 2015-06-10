@@ -151,3 +151,38 @@ background-size:cover;        /* Sets background image to cover entire element *
 	border-bottom: 1px solid rgb(117,122,126);
 
 }
+
+/* tour */
+#body p
+{
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+  	border-bottom: 1px solid rgb(117,122,126);
+	margin: 0;
+}
+.relative
+{
+	position: relative;
+
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+color:white !important;
+ background-color: rgb(242,98,97);
+ height: 4vmax;
+ -moz-border-radius:2vmax;
+ -webkit-border-radius: 2vmax;
+ width: 4vmax;
+line-height:4vmax;
+text-align:center;
+margin: 0 !important;
+}
+
+.listText
+{
+	margin-left: 5vmax;
+}
