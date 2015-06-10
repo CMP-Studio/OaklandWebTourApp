@@ -64,4 +64,85 @@ function getTours($e)
 
 }
 
+function getArtwork($uuid)
+{
+	$json = getJSON();
+	$data = json_decode($json);
+	$artworks = $data->artwork;
+	
+	$art = null;
+	foreach($artworks as $a)
+	{
+		if($a->uuid == $uuid)
+		{
+			$art = $a;
+			break;
+		}
+	}
+	
+	if(is_null($art)) return null;
+	/*
+	$artistWork = $data->artistArtworks;
+	
+	$artUUID = null;
+	foreach($artistWork as $aw)
+	{
+		if($aw->artwork_uuid == $uuid)
+		{
+			$artUUID = $aw->artist_uuid;
+			break;
+		}
+	}
+	
+	$artist = $data->artists;
+
+	foreach($artist as $at)
+	{
+		if($at->uuid == $artUUID)
+		{
+			$art->artist = $at;
+		}
+	}
+	*/
+	return $art;
+	
+}
+
+function getTourWorks($e, $t)
+{
+	$tours = getTours($e);
+	$tour = $tours[$t];
+	$tUUID = $tour->uuid;
+	
+	
+	
+	$json = getJSON();
+	$data = json_decode($json);
+	
+	$artUUID = array();
+	$artTour = $data->tourArtworks;
+	
+	foreach($artTour as $at)
+	{
+		if($at->tour_uuid == $tUUID)
+		{
+			$artUUID[$at->position] = $at->artwork_uuid;
+		}
+	}
+	
+	$ret = array();
+	$artworks = $data->artwork;
+	
+	//var_dump($artUUID);
+	
+	foreach($artUUID as $k=>$a)
+	{
+		$ret[$k] = getArtwork($a);
+	}
+		
+	return $ret;
+	
+
+}
+
 ?>
