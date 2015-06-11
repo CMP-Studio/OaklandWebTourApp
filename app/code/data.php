@@ -68,7 +68,7 @@ function getTourWorks($uuid)
 function getExhibitArtworks($uuid)
 {
 	$uuid = sqlSafe($uuid);
-	$query = "select a.uuid, m.urlFull as url, m.title as title 	from artwork a 	left join media m on (m.artwork_uuid = a.uuid) 	where a.exhibition_uuid = '$uuid' 	and m.kind='image'	group by a.uuid ORDER BY a.title";
+	$query = "select a.uuid, m.urlFull as url, m.title as alt, a.title as title, CONCAT(ifnull(at.first_name,'') , ' ' , ifnull(at.last_name,'')) as Artist 	from artwork a 	left join media m on (m.artwork_uuid = a.uuid) LEFT JOIN artistartworks aa on (a.uuid = aa.artwork_uuid) LEFT JOIN artists at on (aa.artist_uuid = at.uuid) 	where a.exhibition_uuid = '$uuid' 	and m.kind='image'	group by a.uuid ORDER BY a.title";
 	
 	$result = runQuery($query);
 	

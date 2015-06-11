@@ -212,3 +212,30 @@ margin: 0 !important;
 	right: 5%;
 	
 }
+
+.footer
+{
+	position: fixed;
+	bottom:0;
+	height: 7vh;
+	width: 100%;
+	background-color: rgb(51,51,51);
+		text-align:center;
+
+}
+
+.footer i 
+{
+	color:rgb(145,145,145);
+	line-height: 7vh;
+	font-size:5vh;
+	margin-left: 20%;
+	margin-right:20%;
+
+	
+}
+
+.footer i.active
+{
+	color: rgb(231,98,93);
+}
