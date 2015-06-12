@@ -3,7 +3,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/app/code/data.php";
 
 $e = $_GET["e"];
 
-$mode = $_GET["m"];
+if(isset($_GET["m"]))
+{
+	$mode = $_GET["m"];
+}
+else
+{
+	$mode = "imgs";
+}
+
+
 
 $art = getExhibitArtworks($e);
 $ex = getExhibit($e);
@@ -28,6 +37,8 @@ function printArt($art, $col)
 		<?php
 		require_once $_SERVER['DOCUMENT_ROOT'] . "/app/templates/head.php";
 		require_once $_SERVER['DOCUMENT_ROOT'] . "/app/templates/topbar.php";
+		
+		$_SESSION["backurl"] = "/exhibit/artworks/?e=$e";
 		?>
 	</head>
 	<body>

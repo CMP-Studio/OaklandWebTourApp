@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
+?>
 <!-- Metas -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

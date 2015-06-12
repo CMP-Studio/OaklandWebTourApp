@@ -239,3 +239,46 @@ margin: 0 !important;
 {
 	color: rgb(231,98,93);
 }
+
+/* Artwork */
+#imgHolder
+{
+	margin-top: 12vh;
+
+	border-bottom: 1px solid rgb(117,122,126);
+}
+
+
+#carousel-media
+{
+	
+
+	height: 28vmax;
+	
+
+
+}
+
+#carousel-media img, #carousel-media video
+{
+	display: block;
+	height: 24vmax;
+	padding: 1vh 0;
+	width:auto;
+	margin: 0 auto;
+}
+.carousel-indicators
+{
+	bottom: 0;
+}
+.carousel-indicators li
+{
+	border-color: rgb(231,98,93);
+	background-color: transparent;
+}
+.carousel-indicators li.active
+{
+	background-color: rgb(231,98,93);
+}
+
+
