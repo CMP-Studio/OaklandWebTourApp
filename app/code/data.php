@@ -80,6 +80,16 @@ function getExhibitArtworks($uuid)
 	return $return;
 
 }
+function getArtwork($uuid)
+{
+
+	$uuid = sqlSafe($uuid);
+	$query = "SELECT a.uuid, a.title, a.body, CONCAT(ifnull(at.first_name,'') , ' ' , ifnull(at.last_name,'')) as Artist FROM artwork a LEFT JOIN artistartworks aa on (a.uuid = aa.artwork_uuid) LEFT JOIN artists at on (aa.artist_uuid = at.uuid) WHERE a.uuid = '$uuid'";
+	
+	$result = runQuery($query);
+	$row = $result->fetch_assoc();
+	return $row;
+}
 
 
 //General purpose query execution, writes errors to error log
@@ -92,6 +102,7 @@ function runQuery($query)
 	if ($sql->error) 
 	{
 		error_log ( "SQL Error: " . $sql->error . " | Query: $query");
+		
 	}
 	
 	return $result;
