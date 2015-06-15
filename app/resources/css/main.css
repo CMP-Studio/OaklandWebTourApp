@@ -60,10 +60,17 @@ p, h1, h2, h3
 	margin: 1vh 0;
 	color: rgb(117,122,126);
 }
-.list  a
+.list  li
 {
 	border-bottom: 1px solid rgb(117,122,126);
 
+}
+
+.fakeLink
+{
+	position: relative;
+  display: block;
+  padding: 10px 15px;
 }
 
 /* Home Page */
@@ -249,11 +256,13 @@ margin: 0 !important;
 }
 
 
+
+
 #carousel-media
 {
 	
 
-	height: 28vmax;
+	height: 35vmax;
 	
 
 
@@ -262,8 +271,8 @@ margin: 0 !important;
 #carousel-media img, #carousel-media video
 {
 	display: block;
-	height: 24vmax;
-	padding: 1vh 0;
+	height: 30vmax;
+	padding: 1vmax;
 	width:auto;
 	margin: 0 auto;
 }
@@ -280,5 +289,59 @@ margin: 0 !important;
 {
 	background-color: rgb(231,98,93);
 }
+
+#carousel-media .carousel-control
+{
+	background-color: transparent;
+	background-image: none;
+	color: rgb(231,98,93);
+	width: 10%;
+}
+
+#audioHolder
+{
+	padding: 1vh 2vmax;
+	height:30px + 1vh;
+	border-bottom: 1px solid rgb(117,122,126);
+	
+}
+
+#audioHolder audio
+{
+	width: 75%;
+	height: 30px;
+}
+
+.audioControls
+{
+
+	float:right;
+	font-size: 24px;
+	line-height:30px;
+	width: 24%;
+	text-align:center;
+
+}
+
+.audioControls a
+{
+		color: #6EC1EB;
+		margin: 0 2vw;
+}
+
+@media only screen and (max-width: 767px)
+{
+	.audioControls a
+	{
+			margin: 0 0.75vw;
+	}
+}
+
+.ui-dialog-titlebar
+{
+	display:none;
+}
+
+
 
 

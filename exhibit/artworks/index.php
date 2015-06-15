@@ -73,7 +73,7 @@ function printArt($art, $col)
 	<?php } ?>
 		<div id="modeSwitch" class="footer">
 			<p>
-				<a href="./?e=<?php print $e; ?>"><i class="fa fa-picture-o <?php if($mode == null) print "active";?>"></i></a>
+				<a href="./?e=<?php print $e; ?>"><i class="fa fa-picture-o <?php if($mode == "imgs") print "active";?>"></i></a>
 				<a href="./?m=list&e=<?php print $e; ?>"><i class="fa fa-list <?php if($mode == "list") print "active";?>"></i></a>
 			</p>
 		</div>
