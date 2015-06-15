@@ -109,15 +109,15 @@ function getArtworkMedia($uuid, $kind="all")
 
 }
 
-function getArtworkByCode($code)
+function searchByCode($code)
 {
 	$code = sqlSafe($code);
 	
-	$query = "SELECT uuid FROM artwork WHERE code = '$code'";
+	$query = "(SELECT uuid, 'art' as type FROM artwork WHERE code = '$code') UNION (SELECT uuid, 'artist' as type FROM artists WHERE code = '$code')";
 	
 	$result = runQuery($query);
 	$row = $result->fetch_assoc();
-	return $row["uuid"];
+	return $row;
 
 }
 
