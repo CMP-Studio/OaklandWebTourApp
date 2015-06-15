@@ -48,13 +48,13 @@ p, h1, h2, h3
 	
 }
 
-.list h3
+ h3
 {
 	font-size: 3vmax;
 	color: rgb(242,98,97);
 	margin: 1vh 0;
 }
-.list p
+p
 {
 	font-size: 2vmax;
 	margin: 1vh 0;
@@ -325,7 +325,7 @@ margin: 0 !important;
 
 .audioControls a
 {
-		color: #6EC1EB;
+		color: #1987BF;
 		margin: 0 2vw;
 }
 
@@ -341,6 +341,31 @@ margin: 0 !important;
 {
 	display:none;
 }
+
+/* search */
+
+#searchBody
+{
+		margin-top:14vh;
+		text-align:center;
+}
+
+#searchBody .link
+{
+	background:transparent;
+	border:none;
+	color: #1987BF;
+		font-size: 2vmax;
+	margin: 1vh 0;
+	
+}
+
+.orange
+{
+			color: rgb(242,98,97);
+}
+
+
 
 
 

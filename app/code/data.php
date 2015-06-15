@@ -109,6 +109,34 @@ function getArtworkMedia($uuid, $kind="all")
 
 }
 
+function getArtworkByCode($code)
+{
+	$code = sqlSafe($code);
+	
+	$query = "SELECT uuid FROM artwork WHERE code = '$code'";
+	
+	$result = runQuery($query);
+	$row = $result->fetch_assoc();
+	return $row["uuid"];
+
+}
+
+
+function getExhibitArtists($uuid)
+{
+	$uuid = sqlSafe($uuid);
+	
+	$query = "SELECT CONCAT(ifnull(first_name,'') , ' ' , ifnull(last_name,'')) as Name, uuid FROM Artists WHERE exhibition_uuid = '$uuid' ORDER BY last_name";
+	
+	$result = runQuery($query);
+	$return = array();
+	while ($row = $result->fetch_assoc()) 
+	{
+		array_push($return, $row);
+	}
+	return $return;
+
+}
 
 //General purpose query execution, writes errors to error log
 function runQuery($query, $debug=FALSE)

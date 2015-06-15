@@ -6,6 +6,8 @@ $t = $_GET["t"];
 $works = getTourWorks($t);
 $tour = getTourInfo($t);
 
+$_SESSION["backurl"] = "/exhibit/tour/?t=$t";
+
 ?>
 
 <html>
