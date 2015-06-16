@@ -92,7 +92,7 @@
 					<!-- Add indicators here -->
 					<?php 
 					foreach($med as $k=>$i) { ?>
-						<li data-target="#myCarousel" data-slide-to="<?php print $k; ?> " class="<?php if ($k == 0) print "active"; ?>"></li>
+						<li data-target="#carousel-media" data-slide-to="<?php print $k; ?> " class="<?php if ($k == 0) print "active"; ?>"></li>
 					<?php } ?>
 				</ol>
 
@@ -104,9 +104,7 @@
 							<?php if($i["kind"] == "image") { ?>
 								<img src="<?php print $i["url"]; ?>" alt="<?php print $i["title"]; ?> ">
 							<?php } else { ?>
-								<video controls>
-									<source src="<?php print $i["url"] ?>">
-								</video>
+								<video src="<?php print $i["url"]; ?>" poster="<?php print $i["Thumbnail"] ?>" type="video/mp4" onclick="this.play();" controls/>
 							<?php } ?>
 						</div>
 					<?php } ?>					
